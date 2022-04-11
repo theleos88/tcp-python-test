@@ -1,15 +1,18 @@
 # First test
 
-**Start TCP Server**
+##############################
 
-```
-python tcp-server.py
-```
+## LAUNCH A NEW TERMINAL
+- From the new terminal, execute the server
 
-**Start TCP Client**
+sudo ip netns exec machine2 python tcp-server.py
 
-```
-python tcp-client.py
-```
+
+## LAUNCH A SECOND TERMINAL
+- From this second terminal, execute the client
+
+sudo ip netns exec machine1 python tcp-client.py
+
+
 
 **Enjoy one-shot communication**

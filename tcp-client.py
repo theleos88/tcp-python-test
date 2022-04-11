@@ -5,19 +5,19 @@ PORT = 9999
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect((HOST, PORT))
-print 'CONNECTING TO ' + HOST + ':' + str(PORT)
+print ('CONNECTING TO ' + HOST + ':' + str(PORT))
 
 message = 'Hello, world'
-print 'SEND || ' + message
-n = client.send(message)
+print ('SEND || ' + message)
+n = client.send(bytes(message, encoding='utf8'))
 if (n != len(message)):
-	print 'SEND Error'
+	print ('SEND Error')
 else:
-	print 'SEND Ok'
+	print ('SEND Ok')
 
-print 'RECV...'
+print ('RECV...')
 data = client.recv(1024)
-print 'DATA RECV || ', data
-print 'DISCONNECT.'
+print ('DATA RECV || ', data)
+print ('DISCONNECT.')
 client.close()
 
